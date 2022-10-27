@@ -103,11 +103,11 @@ To run it, you must first create a database and container because the app doesn'
 1. Log into jumpbox, copy the `update_container.py` application into it, and run the following commands:
 
 ```sh
-export COSMOS_ACCOUNT_ENDPOINT = "USE_YOUR_VALUE_HERE"
-export MANAGED_IDENTITY_CLIENT_ID = "USE_YOUR_VALUE_HERE"
-export DATABASE_NAME = "USE_YOUR_VALUE_HERE"
-export CONTAINER_NAME = "USE_YOUR_VALUE_HERE"
+export COSMOS_ACCOUNT_ENDPOINT="USE_YOUR_VALUE_HERE"
+export MANAGED_IDENTITY_CLIENT_ID="USE_YOUR_VALUE_HERE"
+export DATABASE_NAME="USE_YOUR_VALUE_HERE"
+export CONTAINER_NAME="USE_YOUR_VALUE_HERE"
 
-pip install family azure-cosmos
+pip install azure-cosmos
 python3 update_container.py
 ```

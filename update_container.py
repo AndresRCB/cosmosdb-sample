@@ -79,7 +79,7 @@ async def run_sample():
             # generate some family items to test create, read, delete operations
             family_items_to_create = [family.get_andersen_family_item(), family.get_johnson_family_item(), family.get_smith_family_item(), family.get_wakefield_family_item()]
             # populate the family items in container
-            await populate_container_items(container_obj, family_items_to_create)  
+            await populate_container_items(container_obj, family_items_to_create)
             # read the just populated items using their id and partition key
             await read_items(container_obj, family_items_to_create)
             # Query these items using the SQL query syntax. 

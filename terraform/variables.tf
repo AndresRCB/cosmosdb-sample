@@ -8,6 +8,11 @@ variable "ssh_key_file" {
   description = "Location of the private SSH key in the local file system"
 }
 
+variable "cosmosdb_account_name" {
+  type        = string
+  description = "Cosmos db account name"
+}
+
 variable "location" {
   type        = string
   description = "location for the resource group"
@@ -102,24 +107,6 @@ variable "pe_connection_name" {
   type        = string
   description = "Private Endpoint Connection Name"
   default     = "pe_connection"
-}
-
-variable "cosmosdb_account_name" {
-  type        = string
-  description = "Cosmos db account name"
-  default     = "cosmosdb-account"
-}
-
-variable "cosmosdb_sqldb_name" {
-  type        = string
-  description = "Name for SQL DB inside Cosmos DB Account"
-  default     = "cosmosdb-sqldb"
-}
-
-variable "sql_container_name" {
-  type        = string
-  description = "SQL API container name."
-  default     = "cosmosdb-container"
 }
 
 variable "throughput" {

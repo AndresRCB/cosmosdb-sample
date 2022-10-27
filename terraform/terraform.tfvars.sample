@@ -1,6 +1,7 @@
 # Required variables
 resource_group_name = "cosmosdb-sample-rg"
 ssh_key_file = "~/.ssh/id_rsa"
+cosmosdb_account_name   = "cosmosdb-sample-$ANYRANDOMNAME-account"
 
 ## VALUES BELOW ARE DEFAULT VALUES. UNCOMMENT AND CHANGE TO OVERRIDE
 

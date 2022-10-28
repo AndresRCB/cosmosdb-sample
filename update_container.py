@@ -1,4 +1,5 @@
-from azure.cosmos import CosmosClient, PartitionKey, exceptions
+from azure.cosmos.aio import CosmosClient, exceptions
+from azure.identity import ManagedIdentityCredential
 import asyncio
 import family
 import os
@@ -69,7 +70,8 @@ async def query_items(container_obj, query_text):
 # <run_sample>
 async def run_sample():
     # <create_cosmos_client>
-    with CosmosClient(endpoint, client_id) as client:
+    credential = ManagedIdentityCredential(client_id=client_id)
+    with CosmosClient(endpoint, credential, consistency_level='Eventual') as client:
     # </create_cosmos_client>
         try:
             # create a database

@@ -97,7 +97,7 @@ There is an application included based on [this Azure sample].
 
 To run it, you must first create a database and container because the app doesn't use the `azure.mgmt.cosmosdb` package (it only does data plane operations). So, follow the next steps:
 
-1. Create a database with a container in your Cosmos DB account
+1. Create a database with a container that uses `/lastName` as partition key in your Cosmos DB account
 1. Get your Cosmos DB account endpoint by executing `terraform output cosmos_db_account_endpoint`
 1. Get your managed identity client_id by executing `terraform output managed_identity_client_id`
 1. Log into jumpbox, copy the `update_container.py` application into it, and run the following commands:
@@ -108,6 +108,6 @@ export MANAGED_IDENTITY_CLIENT_ID="USE_YOUR_VALUE_HERE"
 export DATABASE_NAME="USE_YOUR_VALUE_HERE"
 export CONTAINER_NAME="USE_YOUR_VALUE_HERE"
 
-pip install azure-cosmos
+pip install azure-cosmos azure-identity
 python3 update_container.py
 ```

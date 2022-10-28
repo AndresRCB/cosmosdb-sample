@@ -91,6 +91,15 @@ module "azure_cosmos_db" {
   ]
 }
 
+data "azurerm_cosmosdb_account" "main" {
+  resource_group_name = azurerm_resource_group.main.name
+  name = var.cosmosdb_account_name
+
+  depends_on = [
+    module.azure_cosmos_db
+  ]
+}
+
 ## BASTION HOST RESOURCES
 
 resource "azurerm_public_ip" "main" {

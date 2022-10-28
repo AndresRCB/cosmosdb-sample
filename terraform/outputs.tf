@@ -8,13 +8,23 @@ output "managed_identity_client_id" {
   description = "Client ID of the user-assigned managed identity needed to connect to Cosmos DB"
 }
 
+output "subscription_id" {
+  value = data.azurerm_subscription.current.subscription_id
+  description = "Subscription used to create all resources"
+}
+
 output "resource_group_name" {
   value = azurerm_resource_group.main.name
   description = "Name of the resource group containing all resources"
 }
 
-output "cosmos_db_account_name" {
+output "cosmos_db_account_id" {
   value = module.azure_cosmos_db.cosmosdb_id
+  description = "Resource ID of the Cosmos DB account"
+}
+
+output "cosmos_db_account_name" {
+  value = data.azurerm_cosmosdb_account.main.name
   description = "Name of the Cosmos DB account"
 }
 
